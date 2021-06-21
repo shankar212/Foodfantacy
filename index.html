@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive FOOD Website Design Tutorial</title>
+
+    <!-- aos css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->=
+    <link rel="stylesheet" href="food.css">
+
+  </head>
+
+  <body>
+<script>
+$(document).ready(function(){
+
+    $('#menu-bar').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+    });
+
+    $(window).on('load scroll',function(){
+
+        $('#menu-bar').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+
+        $('section').each(function(){
+
+            let top = $(window).scrollTop();
+            let height = $(this).height();
+            let id = $(this).attr('id');
+            let offset = $(this).offset().top - 200;
+
+            if(top > offset && top < offset + height){
+                $('.navbar ul li a').removeClass('active');
+                $('.navbar').find(`[href="#${id}"]`).addClass('active');
+            }
+
+        });
+
+    });
+
+    $('.list .btn').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        let src = $(this).attr('data-src');
+        $('.menu .row .image img').attr('src',src);
+    });
+
+});
+</script>
+    <!-- header section starts  -->
+
+    <header>
+
+      <a href="#" class="logo">
+        <img src="/storage/emulated/0/Download/logo-img.png" alt="">
+      </a>
+
+      <div id="menu-bar" class="fas fa-hamburger"></div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a class="active" href="#home">home</a>
+          </li>
+          <li><a href="#about">about</a>
+          </li>
+          <li><a href="#menu">menu</a>
+          </li>
+          <li><a href="#popular">popular</a>
+          </li>
+          <li><a href="#gallery">gallery</a>
+          </li>
+          <li><a href="#order">order</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+      <div class="content" data-aos="fade-right">
+        <h3>We belive good food offer great smile</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, odit distinctio
+          error corporis adipisci molestias eveniet optio quaerat tempore asperiores!</p>
+        <a href="#">
+          <button class="btn">get started</button>
+        </a>
+      </div>
+
+      <div class="image" data-aos="fade-up">
+        <img src="/storage/emulated/0/Download/home-img.png" alt="">
+      </div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+
+      <div class="image" data-aos="fade-right">
+        <img background-size="cover" background-position="center" background-blend-mode="screen"
+        src="/storage/emulated/0/Dcoder/about-img (1).jpg" alt="">
+      </div>
+
+      <div class="content" data-aos="fade-left">
+        <h3>a word about us</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium
+          eligendi a totam consequatur! Quis minus amet iusto iure repudiandae,
+          incidunt enim fugiat ipsa? Iure quam et quo quos quisquam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint totam pariatur
+          saepe sit nostrum consequuntur, praesentium accusamus harum voluptate
+          soluta.
+        </p>
+        <a href="#">
+          <button class="btn">learn more</button>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- about section ends -->
+
+    <section class="menu" id="menu">
+
+      <h1 class="heading"> our delicious
+        <span>menu</span>
+      </h1>
+
+      <ul class="list" data-aos="fade-down">
+        <li class="btn" data-src="/storage/emulated/0/Download/pexels-kyle-roxas-2122294.jpg">breakfast</li>
+        <li class="btn active" data-src="/storage/emulated/0/Download/pexels-william-choquette-2641886.jpg">lunch</li>
+        <li class="btn" data-src="/storage/emulated/0/Download/pexels-rajesh-tp-1624487.jpg">dinner</li>
+        <li class="btn" data-src="/storage/emulated/0/Download/pexels-lucas-guizo-3780469.jpg">dessert</li>
+      </ul>
+
+      <div class="row" data-aos="fade-right">
+
+        <div class="image" data-aos="fade-left">
+          <img src="/storage/emulated/0/Download/pexels-william-choquette-2641886.jpg" id="menu-img"
+          alt="">
+        </div>
+
+        <div class="content">
+          <div class="info">
+            <h3>
+              <span>01.</span> we serve best food in the country </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, vero?</p>
+          </div>
+          <div class="info">
+            <h3>
+              <span>02.</span> we serve best food in the country </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, vero?</p>
+          </div>
+          <div class="info">
+            <h3>
+              <span>03.</span> we serve best food in the country </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, vero?</p>
+          </div>
+          <div class="info">
+            <h3>
+              <span>04.</span> we serve best food in the country </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, vero?</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- popular section starts  -->
+
+    <section class="popular" id="popular">
+
+      <h1 class="heading"> most
+        <span>popular</span> foods </h1>
+
+      <div class="box-container">
+
+        <div class="box" data-aos="fade-right">
+          <img src="/storage/emulated/0/Download/pexels-suzy-hazelwood-1126359.jpg" alt="">
+          <h3>Fruits Cheesecake</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="price">$18.00</div>
+          <a href="#">
+            <button class="btn">add to cart</button>
+          </a>
+        </div>
+
+        <div class="box" data-aos="fade-left">
+          <img src="/storage/emulated/0/Download/pexels-ash-376464.jpg" alt="">
+          <h3>Americane pan cake</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="price">$5.00</div>
+          <a href="#">
+            <button class="btn">add to cart</button>
+          </a>
+        </div>
+
+        <div class="box" data-aos="fade-right">
+          <img src="/storage/emulated/0/Download/pexels-malidate-van-769289.jpg" alt="">
+          <h3>delicious food</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="price">$28.00</div>
+          <a href="#">
+            <button class="btn">add to cart</button>
+          </a>
+        </div>
+
+        <div class="box" data-aos="fade-left">
+          <img src="/storage/emulated/0/Download/pexels-jonathan-borba-2983101.jpg" alt="">
+          <h3> Truffle Burgers And Fries</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="price">$35.00</div>
+          <a href="#">
+            <button class="btn">add to cart</button>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- popular section ends -->
+
+    <!-- gallery section starts  -->
+
+    <section class="gallery" id="gallery">
+
+      <h1 class="heading"> our food
+        <span>gallery</span>
+      </h1>
+
+      <div class="box-container">
+
+        <div class="box" data-aos="fade-up">
+          <img src="/storage/emulated/0/Download/pexels-matheus-guimarães-1291712.jpg" alt="">
+          <h3>delicious food</h3>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+          <img src="/storage/emulated/0/Download/pexels-lisa-1351238.jpg" alt="">
+          <h3>delicious food</h3>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+          <img src="/storage/emulated/0/Download/pexels-engin-akyurt-2673353.jpg" alt="">
+          <h3>delicious food</h3>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+          <img src="/storage/emulated/0/Download/pexels-jane-d-1092730.jpg" alt="">
+          <h3>delicious food</h3>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+          <img src="/storage/emulated/0/Download/pexels-lisa-1279330.jpg" alt="">
+          <h3>delicious food</h3>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+          <img src="/storage/emulated/0/Download/pexels-teejay-1362534.jpg" alt="">
+          <h3>delicious food</h3>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- gallery section ends -->
+
+    <!-- order section starts  -->
+
+    <section class="order" id="order">
+
+      <h1 class="heading"> make an
+        <span>order</span>
+      </h1>
+
+      <div class="row">
+
+        <form action="" data-aos="fade-right">
+          <input type="text" placeholder="your name" class="box">
+          <input type="email" placeholder="your email" class="box">
+          <input type="password" placeholder="your password" class="box">
+          <input type="number" placeholder="your number" class="box">
+          <textarea name="" id="" cols="30" rows="10" class="box address" placeholder="your address">
+          </textarea>
+          <input type="submit" value="order now" class="btn">
+        </form>
+
+        <div class="image" data-aos="fade-left">
+          <img src="/storage/emulated/0/Download/pexels-abhinav-goswami-291528.jpg" alt="">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- order section ends -->
+
+    <!-- footer section starts  -->
+
+    <div class="footer">
+
+      <div class="box-container">
+
+        <div class="box">
+          <h3>contact info</h3>
+          <p> <i class="fas fa-map-marker-alt"></i> Adilabad Telangana 504001 </p>
+          <p> <i class="fas fa-envelope"></i> Shankarbablu22@gmail.com </p>
+          <p> <i class="fas fa-phone"></i> +917780772877</p>
+          <p> <i class="fas fa-phone"></i> +918897557320 </p>
+        </div>
+
+        <div class="box">
+          <h3>branch location</h3>
+          <a href="#">Hyderabad</a>
+          <a href="#">Adilabad</a>
+          <a href="#">Nizamabad</a>
+          <a href="#">Warangal</a>
+        </div>
+
+        <div class="box">
+          <h3>quick links </h3>
+          <a href="#">home</a>
+          <a href="#">about</a>
+          <a href="#">menu</a>
+          <a href="#">popular</a>
+          <a href="#">gallery</a>
+          <a href="#">order</a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#">instagram</a>
+          <a href="#">facebook</a>
+          <a href="#">twitter</a>
+          <a href="#">linkedin</a>
+        </div>
+
+      </div>
+
+      <h1 class="credit">Created by <a href="#">mr. Rathod Shanker</a> all @rights reserved. </h1>
+
+    </div>
+
+    <!-- footer section ends -->
+
+
+
+
+
+    <!-- aos js cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script>$(document).ready(function(){
+    
+    $('#menu-bar').click(function(){
+    $(this).toggleClass('fa-times');
+    $('.navbar').toggleClass('nav-toggle');
+    });
+    
+    $(window).on('load scroll',function(){
+    
+    $('#menu-bar').removeClass('fa-times');
+    $('.navbar').removeClass('nav-toggle');
+    
+    $('section').each(function(){
+    
+    let top = $(window).scrollTop();
+    let height = $(this).height();
+    let id = $(this).attr('id');
+    let offset = $(this).offset().top - 200;
+    
+    if(top > offset && top < offset + height){
+    $('.navbar ul li a').removeClass('active');
+    $('.navbar').find(`[href="#${id}"]`).addClass('active');
+    }
+    
+    });
+    
+    });
+    
+    $('.list .btn').click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+    let src = $(this).attr('data-src');
+    $('.menu .row .image img').attr('src',src);
+    });
+    
+    });</script>
+
+    <!-- initializing aos -->
+
+    <script>
+      AOS.init(
+      {
+        delay: 400,
+        duration: 1000
+      })
+    </script>
+
+  </body>
+
+</html>
